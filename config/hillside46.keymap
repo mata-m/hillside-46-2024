@@ -23,6 +23,9 @@
 #define Paste  LC(V)
 #define Redo   LC(Y)
 
+#define XXX &none
+#define ___ &trans
+
 
 / {
         keymap {

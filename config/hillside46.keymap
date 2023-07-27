@@ -47,6 +47,11 @@
             ╰───────────────╮ 38  39  40  41 │ │ 42  43  44  45 ╭───────────────╯
                             ╰────────────────╯ ╰────────────────╯               */
             compatible = "zmk,combos";
+            combo_cut {
+                timeout-ms = <50>;
+                key-positions = <26 28>;
+                bindings = <&kp LS(DEL)>;
+            };
             combo_copy {
                 timeout-ms = <50>;
                 key-positions = <26 27>;
@@ -57,6 +62,8 @@
                 key-positions = <27 28>;
                 bindings = <&kp LS(INS)>;
             };
+            // Switch languages
+
         };
 	behaviors {
                 td0: td_ply_nxt {
@@ -139,7 +146,7 @@
  */
                         bindings = <
 XXX             &kp EQUAL  &kp N7 &kp N8 &kp N9 &td1 &kp F6              &kp F7   &kp F8   &kp F9   &kp F10  &kp F11
-&kp ENTER    	&u_colon	   &kp N4 &kp N5 &kp N6 &td2             &kp CARET   &hmr RCTRL AMPS &hmr RSHIFT STAR &hmr LALT LPAR &hmr RGUI RPAR &kp MINUS
+&kp ENTER    	&kp DOT	   &kp N4 &kp N5 &kp N6 &td2             &kp CARET   &hmr RCTRL AMPS &hmr RSHIFT STAR &hmr LALT LPAR &hmr RGUI RPAR &kp MINUS
 &kp C_AL_CALC   &kp KP_DOT &kp N1 &kp N2 &kp N3 &kp N0      &kp KP_N6  ___ ___    &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_N0   XXX
                                                 ___ ___ ___ ___ 	___ ___ ___ &kp F12 
                         >;

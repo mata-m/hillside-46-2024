@@ -33,7 +33,10 @@
 	flavor = "balanced";
 };
 
-
+&caps_word {
+                        // Allow caps word to continue even when minus or underscore are pressed.
+                        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
 / {
         combos {
         /*                KEY POSITIONS
@@ -49,10 +52,6 @@
                 key-positions = <17 18 21 22>;
                 bindings = <&kp CAPSLOCK>;
             };
-        };
-        &caps_word {
-                        // Allow caps word to continue even when minus or underscore are pressed.
-                        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
         };
 	behaviors {
                 td0: td_ply_nxt {

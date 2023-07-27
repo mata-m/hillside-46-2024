@@ -28,6 +28,8 @@
 
 /* Settings */
 #define QUICK_TAP_MS 175
+#define COMBO_TERM_FAST 20
+#define COMBO_TERM_SLOW 35
 
 &mt {
 	flavor = "balanced";
@@ -48,28 +50,28 @@
                             ╰────────────────╯ ╰────────────────╯               */
             compatible = "zmk,combos";
             combo_cut {
-                timeout-ms = <50>;
+                timeout-ms = <COMBO_TERM_SLOW>;
                 key-positions = <26 28>;
                 bindings = <&kp LS(DEL)>;
             };
             combo_copy {
-                timeout-ms = <50>;
+                timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <26 27>;
                 bindings = <&kp LC(INS)>;
             };
             combo_paste {
-                timeout-ms = <50>;
+                timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <27 28>;
                 bindings = <&kp LS(INS)>;
             };
             // Switch languages
             combo_lang1 {
-                timeout-ms = <50>;
+                timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <15 16>;
                 bindings = <&kp LC(LS(N1))>;
             };
             combo_lang2 {
-                timeout-ms = <50>;
+                timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <19 20>;
                 bindings = <&kp LC(LS(N2))>;
             };
@@ -183,7 +185,7 @@ XXX         &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_N4 &kp KP_N5  ___ ___        
 XXX XXX &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(LC(LEFT))       XXX XXX XXX XXX XXX XXX
 XXX XXX &kp LG(N4) &kp LG(N5) &kp LG(N6) &kp LG(LC(RIGHT))      XXX XXX XXX XXX XXX XXX
 XXX XXX &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N0) ___     ___ XXX XXX XXX XXX XXX XXX
-                                        ___ ___ ___ ___    &dot_spc ___ ___ ___
+                                        ___ ___ ___ ___    ___ ___ ___ ___
                         >;
                 };
 		

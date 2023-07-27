@@ -50,6 +50,10 @@
                 bindings = <&kp CAPSLOCK>;
             };
         };
+        &caps_word {
+                        // Allow caps word to continue even when minus or underscore are pressed.
+                        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+        };
 	behaviors {
                 td0: td_ply_nxt {
                         compatible = "zmk,behavior-tap-dance";
@@ -91,10 +95,6 @@
                         bindings = <&kp>, <&kp>;
                 };
                 // tap: sticky-shift | shift + tap / double-tap: caps-word | hold: shift
-                &caps_word {
-                        // Allow caps word to continue even when minus or underscore are pressed.
-                        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-                };
                 ss_cw: capsword {
                         compatible = "zmk,behavior-mod-morph";
                         label = "CAPS_WORD";

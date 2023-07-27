@@ -90,6 +90,19 @@
                         global-quick-tap;
                         bindings = <&kp>, <&kp>;
                 };
+                // tap: sticky-shift | shift + tap / double-tap: caps-word | hold: shift
+                &caps_word {
+                        // Allow caps word to continue even when minus or underscore are pressed.
+                        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+                };
+                ss_cw: capsword {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "CAPS_WORD";
+                        #binding-cells = <0>;
+                        bindings = <&sk LSHFT>, <&caps_word>;
+                        mods = <(MOD_LSFT)>;
+                };
+                
 	};
 
 
@@ -105,10 +118,10 @@
  *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
  */
                         bindings = <
-&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  ENTER  
-&kp  LCTRL    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  ESC                                           &caps_word    &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  SQT
-                                                        &kp  LGUI     &kp  LALT     &sk  LSHIFT    &mo  NAV_L            &mo  SYM_L    &kp  SPACE    &kp  LALT     &kp  RGUI
+&gesc      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                  &kp U   &kp I  &kp O   &kp P    &kp LBKT
+&kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                       &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
+&kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &ESC                                   &INS     &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
+                                &trans   &lt HK TAB  &lt NUM RETURN &lt_spc HK 0 	    &ss_cw &lt NAV BSPC &lt HK DEL &kp RBKT
                         >;
                 };
 		

@@ -43,6 +43,13 @@
 };
 
 / {
+        conditional_layers {
+            compatible = "zmk,conditional-layers";
+            tri_layer {
+                if-layers = <1 2>;
+                then-layer = <4>;
+            };
+        };
         combos {
         /*                KEY POSITIONS
             ╭────────────────────────╮                 ╭────────────────────────╮
@@ -77,6 +84,17 @@
                 timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <19 20>;
                 bindings = <&kp LC(LS(N2))>;
+            };
+            // Symbols
+            combo_amps {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <7 19>;
+                bindings = <&kp AMPS>;
+            };
+            combo_excl {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <1 13>;
+                bindings = <&kp EXCL>;
             };
         };
 	behaviors {
@@ -143,10 +161,10 @@
  *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
  */
                         bindings = <
-&kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                  &kp U   &kp I  &kp O   &kp P    &kp LBKT
-&kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                       &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
-&kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                   &sk LSHFT     &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
-                                &trans   &lt HK TAB  &lt NUM SPACE &lt HK RETURN	    &lt HK BSPC &ss_cw &lt NAV DEL &kp RBKT
+&kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                &kp U   &kp I  &kp O   &kp P    &kp LBKT
+&kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                         &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
+&kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                   &kp INS   &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
+                                &kp BSPC &lt HK TAB  &lt NUM SPACE &lt HK RETURN	&lt HK BSPC &ss_cw &lt NAV DEL &kp RBKT
                         >;
                 };
 		

@@ -34,6 +34,9 @@
 &mt {
 	flavor = "balanced";
 };
+&sk {
+    quick-release;
+};
 
 &caps_word {
                         // Allow caps word to continue even when minus or underscore are pressed.
@@ -140,10 +143,10 @@
  *                                 |  GUI  |  ALT  |SK SHFT|  Nav  |---|  Sym  | SPACE |  ALT  |  GUI  |
  */
                         bindings = <
-&gresc      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                  &kp U   &kp I  &kp O   &kp P    &kp LBKT
+&kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                  &kp U   &kp I  &kp O   &kp P    &kp LBKT
 &kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                       &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
 &kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                   &kp INS     &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
-                                &trans   &lt HK TAB  &lt NUM RETURN &lt HK SPACE 	    &ss_cw &lt NAV BSPC &lt HK DEL &kp RBKT
+                                &trans   &lt HK TAB  &lt NUM SPACE &lt HK RETURN	    &lt HK BSPC &ss_cw &lt NAV DEL &kp RBKT
                         >;
                 };
 		

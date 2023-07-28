@@ -122,7 +122,7 @@
                 // tap: sticky-shift | shift + tap / double-tap: caps-word | hold: shift
                 ss_cw: capsword {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "CAPS_WORD";
+                        label = "CAPSWORD";
                         #binding-cells = <0>;
                         bindings = <&sk LSHFT>, <&caps_word>;
                         mods = <(MOD_LSFT)>;

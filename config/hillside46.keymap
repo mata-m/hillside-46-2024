@@ -74,6 +74,11 @@
                 key-positions = <27 28>;
                 bindings = <&kp LS(INS)>;
             };
+            combo_return {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <30 40>;
+                bindings = <&kp RETURN>;
+            };
             // Switch languages
             combo_lang1 {
                 timeout-ms = <COMBO_TERM_FAST>;
@@ -164,7 +169,7 @@
 &kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                    &kp U   &kp I  &kp O   &kp P    &kp LBKT
 &kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                             &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
 &kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                         &kp INS   &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
-                                &kp BSPC &lt NUM TAB &lt HK SPACE &lt HK RETURN     &lt HK BSPC &ss_cw &lt NAV DEL &kp RBKT
+                                &kp BSPC &lt NUM TAB &lt HK SPACE &lt HK RETURN     &lt HK RBKT &ss_cw &lt NAV BSPC &kp DEL
                         >;
                 };
 		

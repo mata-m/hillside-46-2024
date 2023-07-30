@@ -18,10 +18,10 @@
 #define ADJ 4
 
 #define Undo   LC(Z)
-#define Cut    LC(X)
-#define Copy   LC(C)
-#define Paste  LC(V)
 #define Redo   LC(Y)
+#define Cut    LS(DEL)
+#define Copy   LC(INS)
+#define Paste  LS(INS)
 
 #define XXX &none
 #define ___ &trans
@@ -62,17 +62,17 @@
             combo_cut {
                 timeout-ms = <COMBO_TERM_SLOW>;
                 key-positions = <26 28>;
-                bindings = <&kp LS(DEL)>;
+                bindings = <&kp Cut>;
             };
             combo_copy {
                 timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <26 27>;
-                bindings = <&kp LC(INS)>;
+                bindings = <&kp Copy>;
             };
             combo_paste {
                 timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <27 28>;
-                bindings = <&kp LS(INS)>;
+                bindings = <&kp Paste>;
             };
             combo_return {
                 timeout-ms = <COMBO_TERM_FAST>;
@@ -91,15 +91,55 @@
                 bindings = <&kp LC(LS(N2))>;
             };
             // Symbols
-            combo_amps {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <7 19>;
-                bindings = <&kp AMPS>;
-            };
             combo_excl {
                 timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <1 13>;
+                key-positions = <13 25>;
                 bindings = <&kp EXCL>;
+            };
+            combo_at {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <14 26>;
+                bindings = <&kp AT>;
+            };
+            combo_hash {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <15 27>;
+                bindings = <&kp HASH>;
+            };
+            combo_dllr {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <16 28>;
+                bindings = <&kp DLLR>;
+            };
+            combo_prcnt {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <17 29>;
+                bindings = <&kp PRCNT>;
+            };
+            combo_caret {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <18 32>;
+                bindings = <&kp CARET>;
+            };
+            combo_amps {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <19 33>;
+                bindings = <&kp AMPS>;
+            };
+            combo_star {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <20 34>;
+                bindings = <&kp STAR>;
+            };
+            combo_lpar {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <20 34>;
+                bindings = <&kp LPAR>;
+            };
+            combo_rpar {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <20 34>;
+                bindings = <&kp RPAR>;
             };
         };
 	behaviors {
@@ -168,8 +208,8 @@
                         bindings = <
 &kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                    &kp U   &kp I  &kp O   &kp P    &kp LBKT
 &kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                             &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
-&kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                         &kp INS   &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
-                                &kp BSPC &lt NUM TAB &lt HK SPACE &lt HK RETURN     &lt HK RBKT &ss_cw &lt NAV BSPC &kp DEL
+&kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                         XXX   &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
+                                &kp BSPC &lt NUM TAB &lt HK SPACE XXX     &lt HK RBKT &ss_cw &lt NAV BSPC &kp DEL
                         >;
                 };
 		
@@ -183,7 +223,7 @@
  */
                         bindings = <
 XXX             &kp EQUAL  &kp N7 &kp N8 &kp N9 &td1 &kp F6                 &kp F7   &kp F8   &kp F9   &kp F10  &kp F11
-&kp ENTER    	&kp DOT	   &kp N4 &kp N5 &kp N6 &td2                        &kp CARET   &hrm RCTRL AMPS &hrm RSHIFT STAR &hrm LALT LPAR &hrm RGUI RPAR &kp MINUS
+&kp ENTER    	&kp COLON  &kp N4 &kp N5 &kp N6 &td2                        &kp CARET   &hrm RCTRL AMPS &hrm RSHIFT STAR &hrm LALT LPAR &hrm RGUI RPAR &kp MINUS
 &kp C_AL_CALC   &kp KP_DOT &kp N1 &kp N2 &kp N3 &kp N0 XXX              ___ ___    &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_N0   XXX
                                                 ___ ___ ___ ___ 	___ ___ ___ &kp F12 
                         >;
@@ -208,9 +248,9 @@ XXX         &kp KP_N1   &kp KP_N2 &kp KP_N3 &kp KP_N4 &kp KP_N5  ___            
                 hotkeys_layer {
 
                         bindings = <
-XXX XXX &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(LC(LEFT))           XXX XXX XXX XXX XXX XXX
-XXX XXX &kp LG(N4) &kp LG(N5) &kp LG(N6) &kp LG(LC(RIGHT))          XXX XXX XXX XXX XXX XXX
-XXX XXX &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N0) ___         ___ XXX XXX XXX XXX XXX XXX
+&kp LA(F4) XXX &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(LC(LEFT))           XXX XXX XXX XXX XXX XXX
+XXX        XXX &kp LG(N4) &kp LG(N5) &kp LG(N6) &kp LG(LC(RIGHT))          XXX XXX XXX XXX XXX XXX
+&kp LG(Z)  XXX &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N0) ___         ___ XXX XXX XXX XXX XXX XXX
                                         ___ ___ ___ ___    ___ ___ ___ ___
                         >;
                 };
@@ -225,7 +265,7 @@ XXX XXX &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N0) ___         ___ XXX XXX XXX 
  */
                         bindings = <
 &none         &none &none &none &none         &none                                                                                       &none       &kp   F11       &kp   F12        &kp PRINTSCREEN   &ext_power EP_OFF  &ext_power EP_ON
-&sys_reset    &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                                       &none       &none           &none            &none          &none           &sys_reset
+&sys_reset    &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                                       &none       &none           &none            &kp INS           &none           &sys_reset
 &none         &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp LSHIFT    &none         &bt BT_CLR                             &none      &none       &none           &out  OUT_USB    &out  OUT_BLE  &none           &bootloader
                                                         &trans        &trans        &trans        &trans         &trans    &trans     &trans      &trans 
                         >;

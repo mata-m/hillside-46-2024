@@ -133,12 +133,12 @@
             };
             combo_lpar {
                 timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <20 34>;
+                key-positions = <21 35>;
                 bindings = <&kp LPAR>;
             };
             combo_rpar {
                 timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <20 34>;
+                key-positions = <22 36>;
                 bindings = <&kp RPAR>;
             };
         };

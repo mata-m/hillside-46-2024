@@ -190,7 +190,14 @@
                         bindings = <&sk LSHFT>, <&caps_word>;
                         mods = <(MOD_LSFT)>;
                 };
-                
+                &cw_ht: behavior_mo_cw {
+                    compatible = "zmk,behavior-hold-tap";
+                        label = "cw_ht";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
+                        bindings = <&mo>, <&ss_cw>;
+                };
 	};
 
 
@@ -209,7 +216,7 @@
 &kp GRAVE      &kp Q &kp W &kp E &kp R &kp T &kp Y                                                    &kp U   &kp I  &kp O   &kp P    &kp LBKT
 &kp LA(LC(TAB)) &hrm LGUI A &hrm LALT S &hrm LSHIFT D &hrm LCTRL F  &kp G                             &kp H  &hrm RCTRL J &hrm RSHIFT K &hrm RALT L &hrm RGUI SEMI &kp SQT
 &kp MINUS 	&kp Z &kp X &kp C &kp V &kp B   &kp ESC                                         XXX   &kp N  &kp M  &kp COMMA    &kp DOT &kp FSLH &kp BSLH
-                                &kp BSPC &lt NUM TAB &lt HK SPACE XXX     &lt HK RBKT &ss_cw &lt NAV BSPC &kp DEL
+                                &kp BSPC &lt NUM TAB &lt NUM SPACE &lt HK SPACE     &lt HK RBKT &cw_ht NAV 0 &lt NAV BSPC &kp DEL
                         >;
                 };
 		

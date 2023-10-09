@@ -77,7 +77,7 @@
             combo_return {
                 timeout-ms = <COMBO_TERM_FAST>;
                 key-positions = <30 40>;
-                bindings = <&kp RETURN>;
+                bindings = <&kp RETURN2>;
             };
             // Switch languages
             combo_lang1 {

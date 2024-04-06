@@ -141,6 +141,31 @@
                 key-positions = <22 36>;
                 bindings = <&kp RPAR>;
             };
+            combo_F1 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <1 13>;
+                bindings = <&kp F1>;
+            };
+            combo_F2 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <2 14>;
+                bindings = <&kp F2>;
+            };
+            combo_F3 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <3 15>;
+                bindings = <&kp F3>;
+            };
+            combo_F4 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <4 16>;
+                bindings = <&kp F4>;
+            };
+            combo_F5 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <5 17>;
+                bindings = <&kp F5>;
+            };
         };
 	behaviors {
                 td0: td_ply_nxt {

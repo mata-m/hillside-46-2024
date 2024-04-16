@@ -1,10 +1,18 @@
-/* KEY POSITIONS (using keypos_def helpers)
+/* KEY POSITIONS template (using keypos_def helpers)
 ╭─────────────────────┬─────────────────────╮
 │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
 │ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
 │ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
 ╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
         ╰─────────────┴─────────────╯       */
+
+/*                KEY POSITIONS
+╭────────────────────────╮                 ╭────────────────────────╮
+│  0   1   2   3   4   5 │                 │  6   7   8   9  10  11 │
+│ 12  13  14  15  16  17 ╰───╮         ╭───╯ 18  19  20  21  22  23 │
+│ 24  25  26  27  28  29  30 ╰───╮ ╭───╯ 31  32  33  34  35  36  37 │
+╰───────────────╮ 38  39  40  41 │ │ 42  43  44  45 ╭───────────────╯
+                ╰────────────────╯ ╰────────────────╯               */
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
     combo_##NAME { \
@@ -18,8 +26,115 @@
 
 / {
     combos {
-        compatible = "zmk,combos";
-
+            compatible = "zmk,combos";
+            combo_cut {
+                timeout-ms = <COMBO_TERM_SLOW>;
+                key-positions = <26 28>;
+                bindings = <&kp Cut>;
+            };
+            combo_copy {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <26 27>;
+                bindings = <&kp Copy>;
+            };
+            combo_paste {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <27 28>;
+                bindings = <&kp Paste>;
+            };
+            combo_return {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <30 40>;
+                bindings = <&kp RETURN2>;
+            };
+            // Switch languages
+            combo_lang1 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <15 16>;
+                bindings = <&kp LC(LS(N1))>;
+            };
+            combo_lang2 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <19 20>;
+                bindings = <&kp LC(LS(N2))>;
+            };
+            // Symbols
+            combo_excl {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <13 25>;
+                bindings = <&kp EXCL>;
+            };
+            combo_at {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <14 26>;
+                bindings = <&kp AT>;
+            };
+            combo_hash {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <15 27>;
+                bindings = <&kp HASH>;
+            };
+            combo_dllr {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <16 28>;
+                bindings = <&kp DLLR>;
+            };
+            combo_prcnt {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <17 29>;
+                bindings = <&kp PRCNT>;
+            };
+            combo_caret {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <18 32>;
+                bindings = <&kp CARET>;
+            };
+            combo_amps {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <19 33>;
+                bindings = <&kp AMPS>;
+            };
+            combo_star {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <20 34>;
+                bindings = <&kp STAR>;
+            };
+            combo_lpar {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <21 35>;
+                bindings = <&kp LPAR>;
+            };
+            combo_rpar {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <22 36>;
+                bindings = <&kp RPAR>;
+            };
+            combo_F1 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <1 13>;
+                bindings = <&kp F1>;
+            };
+            combo_F2 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <2 14>;
+                bindings = <&kp F2>;
+            };
+            combo_F3 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <3 15>;
+                bindings = <&kp F3>;
+            };
+            combo_F4 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <4 16>;
+                bindings = <&kp F4>;
+            };
+            combo_F5 {
+                timeout-ms = <COMBO_TERM_FAST>;
+                key-positions = <5 17>;
+                bindings = <&kp F5>;
+            };
+/*
 COMBO(j,      &kp J,       LT2 LT1,     DEF,          80,  50)
 COMBO(q,      &kp Q,       LT2 LT1,         BRD,      80,  50)
 COMBO(v_brd,  &kp V,       LT3 LT2,         BRD,      80,  50)
@@ -53,5 +168,7 @@ COMBO(btclr,  &bt BT_CLR,  RB2 RB3,     FUN,         100, 200)
 #if defined(MOUSE_KEYS) && defined(LH1)
 COMBO(mse_l,  &mo MSE,     LH1 LH0,     DEF BRD,     150,   0, slow-release;)
 #endif
+*/
+
     };
 };

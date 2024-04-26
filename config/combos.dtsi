@@ -24,7 +24,10 @@
         __VA_ARGS__ \
     };
 
-&{
+#define COMBO_TERM_FAST 20
+#define COMBO_TERM_SLOW 35
+
+/ {
     combos {
             compatible = "zmk,combos";
             combo_cut {

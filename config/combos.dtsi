@@ -24,154 +24,73 @@
         __VA_ARGS__ \
     };
 
+/* Settings */
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
+#define COMBO_QUICK_TAP_MS 100
 
 / {
     combos {
             compatible = "zmk,combos";
-            combo_cut {
-                timeout-ms = <COMBO_TERM_SLOW>;
-                key-positions = <26 28>;
-                bindings = <&kp Cut>;
-            };
-            combo_copy {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <26 27>;
-                bindings = <&kp Copy>;
-            };
-            combo_paste {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <27 28>;
-                bindings = <&kp Paste>;
-            };
-            combo_return {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <30 40>;
-                bindings = <&kp RETURN2>;
-            };
-            // Switch languages
-            combo_lang1 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <15 16>;
-                bindings = <&kp LC(LS(N1))>;
-            };
-            combo_lang2 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <19 20>;
-                bindings = <&kp LC(LS(N2))>;
-            };
-            // Symbols
-            combo_excl {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <13 25>;
-                bindings = <&kp EXCL>;
-            };
-            combo_at {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <14 26>;
-                bindings = <&kp AT>;
-            };
-            combo_hash {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <15 27>;
-                bindings = <&kp HASH>;
-            };
-            combo_dllr {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <16 28>;
-                bindings = <&kp DLLR>;
-            };
-            combo_prcnt {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <17 29>;
-                bindings = <&kp PRCNT>;
-            };
-            combo_caret {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <18 32>;
-                bindings = <&kp CARET>;
-            };
-            combo_amps {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <19 33>;
-                bindings = <&kp AMPS>;
-            };
-            combo_star {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <20 34>;
-                bindings = <&kp STAR>;
-            };
-            combo_lpar {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <21 35>;
-                bindings = <&kp LPAR>;
-            };
-            combo_rpar {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <22 36>;
-                bindings = <&kp RPAR>;
-            };
-            combo_F1 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <1 13>;
-                bindings = <&kp F1>;
-            };
-            combo_F2 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <2 14>;
-                bindings = <&kp F2>;
-            };
-            combo_F3 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <3 15>;
-                bindings = <&kp F3>;
-            };
-            combo_F4 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <4 16>;
-                bindings = <&kp F4>;
-            };
-            combo_F5 {
-                timeout-ms = <COMBO_TERM_FAST>;
-                key-positions = <5 17>;
-                bindings = <&kp F5>;
-            };
-/*
-COMBO(j,      &kp J,       LT2 LT1,     DEF,          80,  50)
-COMBO(q,      &kp Q,       LT2 LT1,         BRD,      80,  50)
-COMBO(v_brd,  &kp V,       LT3 LT2,         BRD,      80,  50)
-COMBO(semi,   &kp SEMI,    RT1 RT2,     DEF BRD SYM,  40, 100)
-COMBO(grave,  &kp GRAVE,   RT2 RT3,     DEF BRD SYM,  40, 100)
-COMBO(lpar,   &kp LPAR,    LM2 LM1,     DEF BRD,      40, 100)
-COMBO(rpar,   &kp RPAR,    RM1 RM2,     DEF BRD,      40, 100)
-COMBO(lbkt,   &kp LBKT,    LM3 LM2,     DEF BRD,      40, 100)
-COMBO(rbkt,   &kp RBKT,    RM2 RM3,     DEF BRD,      40, 100)
-COMBO(tab,    &kp TAB,     LM3 LM1,     DEF BRD SYM,  40, 150)
-COMBO(del,    &kp DEL,     RM1 RM3,     DEF BRD SYM,  40, 150)
-COMBO(esc,    &kp ESC,     LM3 LM2 LM1, DEF BRD SYM,  40,  50)
-COMBO(ret,    &kp RET,     RM1 RM2 RM3, DEF BRD SYM,  40,  50)
+        
+            COMBO(cut,        &kp Cut,        26 28,     DEF,          COMBO_TERM_SLOW)
+            COMBO(copy,       &kp Copy,       26 27,     DEF,          COMBO_TERM_FAST)
+            COMBO(paste,      &kp Paste,      27 28,     DEF,          COMBO_TERM_FAST)
+            COMBO(return,     &kp RETURN2,    30 40,     DEF,          COMBO_TERM_FAST)
+            COMBO(lang1,      &kp LC(LS(N1)), 15 16,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(lang2,      &kp LC(LS(N2)), 19 20,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(excl,       &kp EXCL,       13 25,     DEF,          COMBO_TERM_FAST)
+            COMBO(at,         &kp AT,         14 26,     DEF,          COMBO_TERM_FAST)
+            COMBO(hash,       &kp HASH,       15 27,     DEF,          COMBO_TERM_FAST)
+            COMBO(dllr,       &kp DLLR,       16 28,     DEF,          COMBO_TERM_FAST)
+            COMBO(prcnt,      &kp PRCNT,      17 29,     DEF,          COMBO_TERM_FAST)
+            COMBO(caret,      &kp CARET,      18 32,     DEF,          COMBO_TERM_FAST)
+            COMBO(amps,       &kp AMPS,       19 33,     DEF,          COMBO_TERM_FAST)
+            COMBO(star,       &kp STAR,       20 34,     DEF,          COMBO_TERM_FAST)
+            COMBO(lpar,       &kp LPAR,       21 35,     DEF,          COMBO_TERM_FAST)
+            COMBO(rpar,       &kp RPAR,       22 36,     DEF,          COMBO_TERM_FAST)
+            COMBO(F1,         &kp F1,         1 13,      DEF,          COMBO_TERM_FAST)
+            COMBO(F2,         &kp F2,         2 14,      DEF,          COMBO_TERM_FAST)
+            COMBO(F3,         &kp F3,         3 15,      DEF,          COMBO_TERM_FAST)
+            COMBO(F4,         &kp F4,         4 16,      DEF,          COMBO_TERM_FAST)
+            COMBO(F5,         &kp F5,         5 17,      DEF,          COMBO_TERM_FAST)
 
-COMBO(capswd, &caps_word,  LM1 RM1,     DEF BRD,      60, 200)
 
-COMBO(lock,   &kp LG(L),   LT1 LT0,     DEF BRD,      80, 500)
+            /*
+            COMBO(j,      &kp J,       LT2 LT1,     DEF,          80,  50)
+            COMBO(q,      &kp Q,       LT2 LT1,         BRD,      80,  50)
+            COMBO(v_brd,  &kp V,       LT3 LT2,         BRD,      80,  50)
+            COMBO(semi,   &kp SEMI,    RT1 RT2,     DEF BRD SYM,  40, 100)
+            COMBO(grave,  &kp GRAVE,   RT2 RT3,     DEF BRD SYM,  40, 100)
+            COMBO(lpar,   &kp LPAR,    LM2 LM1,     DEF BRD,      40, 100)
+            COMBO(rpar,   &kp RPAR,    RM1 RM2,     DEF BRD,      40, 100)
+            COMBO(lbkt,   &kp LBKT,    LM3 LM2,     DEF BRD,      40, 100)
+            COMBO(rbkt,   &kp RBKT,    RM2 RM3,     DEF BRD,      40, 100)
+            COMBO(tab,    &kp TAB,     LM3 LM1,     DEF BRD SYM,  40, 150)
+            COMBO(del,    &kp DEL,     RM1 RM3,     DEF BRD SYM,  40, 150)
+            COMBO(esc,    &kp ESC,     LM3 LM2 LM1, DEF BRD SYM,  40,  50)
+            COMBO(ret,    &kp RET,     RM1 RM2 RM3, DEF BRD SYM,  40,  50)
 
-COMBO(play,   &kp C_PP,    LT0 LM0,     NAV,         200, 200)
+            COMBO(capswd, &caps_word,  LM1 RM1,     DEF BRD,      60, 200)
 
-COMBO(boot,   &bootloader, LT0 RT0,     FUN,         100, 500)
+            COMBO(lock,   &kp LG(L),   LT1 LT0,     DEF BRD,      80, 500)
 
-COMBO(z,      &kp Z,       LB3 LB2,     DEF BRD,      80,  50)
-COMBO(v,      &kp V,       LB2 LB1,     DEF,          40,  50)
-COMBO(bslh,   &kp BSLH,    RB1 RB2,     DEF BRD SYM,  80, 100)
-COMBO(slsh,   &kp SLASH,   RB2 RB3,     DEF BRD SYM,  80,  50)
+            COMBO(play,   &kp C_PP,    LT0 LM0,     NAV,         200, 200)
 
-COMBO(f12,    &kp F12,     LB3 LB2,     FUN,         100, 200)
-COMBO(btclr,  &bt BT_CLR,  RB2 RB3,     FUN,         100, 200)
+            COMBO(boot,   &bootloader, LT0 RT0,     FUN,         100, 500)
 
-#if defined(MOUSE_KEYS) && defined(LH1)
-COMBO(mse_l,  &mo MSE,     LH1 LH0,     DEF BRD,     150,   0, slow-release;)
-#endif
-*/
+            COMBO(z,      &kp Z,       LB3 LB2,     DEF BRD,      80,  50)
+            COMBO(v,      &kp V,       LB2 LB1,     DEF,          40,  50)
+            COMBO(bslh,   &kp BSLH,    RB1 RB2,     DEF BRD SYM,  80, 100)
+            COMBO(slsh,   &kp SLASH,   RB2 RB3,     DEF BRD SYM,  80,  50)
+
+            COMBO(f12,    &kp F12,     LB3 LB2,     FUN,         100, 200)
+            COMBO(btclr,  &bt BT_CLR,  RB2 RB3,     FUN,         100, 200)
+
+            #if defined(MOUSE_KEYS) && defined(LH1)
+            COMBO(mse_l,  &mo MSE,     LH1 LH0,     DEF BRD,     150,   0, slow-release;)
+            #endif
+            */
 
     };
 };

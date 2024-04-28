@@ -48,13 +48,13 @@
             COMBO(F3,         &kp F3,         3 15,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
             COMBO(F4,         &kp F4,         4 16,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
             COMBO(F5,         &kp F5,         5 17,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F6,         &kp F1,         6 18,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F7,         &kp F2,         7 19,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F8,         &kp F3,         8 20,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F9,         &kp F4,         9 21,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F10,        &kp F5,         10 22,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F11,        &kp F5,         11 23,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
-            COMBO(F12,        &kp F5,         0 12,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F6,         &kp F6,         6 18,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F7,         &kp F7,         7 19,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F8,         &kp F8,         8 20,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F9,         &kp F9,         9 21,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F10,        &kp F10,        10 22,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F11,        &kp F11,        11 23,     DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
+            COMBO(F12,        &kp F12,        0 12,      DEF,          COMBO_TERM_FAST, COMBO_QUICK_TAP_MS)
 
     };
 };

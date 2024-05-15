@@ -27,11 +27,6 @@
 #define XXX &none
 #define ___ &trans
 
-/* Settings */
-#define QUICK_TAP_MS 175
-
-#include "combos.dtsi"
-
 &mt {
 	flavor = "balanced";
 };

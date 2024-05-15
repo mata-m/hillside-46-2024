@@ -43,7 +43,7 @@
         continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LEFT>;
 };
 
-
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
